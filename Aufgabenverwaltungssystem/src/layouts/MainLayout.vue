@@ -1,34 +1,57 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh lpR fFf">
+
+    <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Quasar App
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          AuftragCheck
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer" />
       </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
+    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+      <!-- drawer content -->
       <q-list>
         <q-item-label
           header
         >
-          Essential Links
+          <b>Threads</b>
+          
+        </q-item-label>
+
+        <q-btn-toggle
+        v-model="model"
+        class="my-custom-toggle q-pa-md"
+        no-caps
+        rounded
+        unelevated
+        toggle-color="primary"
+        color="white"
+        text-color="primary"
+        :options="[
+          {label: 'Global', value: 'one'},
+          {label: 'Team', value: 'two'},
+          {label: 'Eigene', value: 'three'}
+        ]"
+      />
+      <q-btn push color="primary" label="+" />
+      </q-list>
+    </q-drawer>
+
+    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+      <!-- drawer content -->
+      <q-list>
+        <q-item-label
+          header
+        >
+          <b>Hallo *Personenname*!</b>
         </q-item-label>
 
         <EssentialLink
@@ -42,6 +65,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
   </q-layout>
 </template>
 
@@ -50,66 +74,62 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Profil',
+    caption: 'Profil bearbeiten',
+    icon: 'manage_accounts',
+    link: '/profil'
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'Team',
+    caption: 'Details deines Teams',
+    icon: 'groups',
+    link: '/team'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: 'Schwarzes Brett',
+    caption: 'schau nach offenen Auftraegen',
+    icon: 'assignment',
+    link: '/auftrag'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: 'Einstellungen',
+    caption: 'Einstellungen aendern',
+    icon: 'settings',
+    link: '/einstellungen'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: 'Abmelden',
+    caption: 'abmelden',
+    icon: 'logout',
+    link: '/logout'
   }
+  
 ];
 
-import { defineComponent, ref } from 'vue'
+import { defineComponent,ref } from 'vue'
 
 export default defineComponent({
-  name: 'MainLayout',
 
+  name: 'MainLayout',
   components: {
     EssentialLink
   },
 
   setup () {
     const leftDrawerOpen = ref(false)
+    const rightDrawerOpen = ref(false)
 
     return {
+      model: ref('one'),
       essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
+      },
+
+      rightDrawerOpen,
+      toggleRightDrawer () {
+        rightDrawerOpen.value = !rightDrawerOpen.value
       }
     }
   }
