@@ -22,10 +22,10 @@
         <q-item-label
           header
         >
-          <b>Threads</b>
-          
+          <b class="q-pa-md">Threads</b>
+          <ThreadForm/>
         </q-item-label>
-
+        
         <q-btn-toggle
         v-model="model"
         class="my-custom-toggle q-pa-md"
@@ -41,7 +41,13 @@
           {label: 'Eigene', value: 'three'}
         ]"
       />
-      <q-btn push color="primary" label="+" />
+      <!--q-btn push color="primary" label="+" /-->
+      <ThreadLink
+        v-for="link in threadLinks"
+        :key="link.title"
+        v-bind="link"
+      />
+
       </q-list>
     </q-drawer>
 
@@ -71,39 +77,54 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue'
+import ThreadForm from 'components/ThreadForm.vue'
+import ThreadLink from 'components/ThreadLink.vue';
 
 const linksList = [
   {
     title: 'Profil',
     caption: 'Profil bearbeiten',
     icon: 'manage_accounts',
-    link: '/profil'
+    link: '#/profil'
   },
   {
     title: 'Team',
     caption: 'Details deines Teams',
     icon: 'groups',
-    link: '/team'
+    link: '#/team'
   },
   {
     title: 'Schwarzes Brett',
     caption: 'schau nach offenen Auftraegen',
     icon: 'assignment',
-    link: '/auftrag'
+    link: '#/auftrag'
   },
   {
     title: 'Einstellungen',
     caption: 'Einstellungen aendern',
     icon: 'settings',
-    link: '/einstellungen'
+    link: '#/einstellungen'
   },
   {
     title: 'Abmelden',
     caption: 'abmelden',
     icon: 'logout',
-    link: '/logout'
+    link: '#/logout'
   }
   
+];
+
+const threadList = [
+  {
+    id: 1,
+    title: 'Test1',
+    created: Date.UTC(2003,0,1)
+  },
+  {
+    id: 2,
+    title: 'Test2',
+    created: Date.UTC(2000,10,1)
+  }
 ];
 
 import { defineComponent,ref } from 'vue'
@@ -112,7 +133,9 @@ export default defineComponent({
 
   name: 'MainLayout',
   components: {
-    EssentialLink
+    EssentialLink,
+    ThreadForm,
+    ThreadLink
   },
 
   setup () {
@@ -120,6 +143,7 @@ export default defineComponent({
     const rightDrawerOpen = ref(false)
 
     return {
+      threadLinks: threadList,
       model: ref('one'),
       essentialLinks: linksList,
       leftDrawerOpen,
