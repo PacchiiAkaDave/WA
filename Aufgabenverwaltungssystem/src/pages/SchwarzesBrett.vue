@@ -1,11 +1,12 @@
 <template>
   <q-page padding>
-    <!-- content -->
+    <AuftragTable />
   </q-page>
 </template>
 
 <script>
+import AuftragTable from "src/components/AuftragTable.vue";
 export default {
-  // name: 'PageName',
+    components: { AuftragTable }
 }
 </script>
