@@ -1,11 +1,14 @@
 <template>
-  <q-page padding>
-    <!-- content -->
-  </q-page>
+  <TeamAuftragTable/>
+
 </template>
 
 <script>
+import TeamAuftragTable from "src/components/TeamAuftragTable.vue"
+
 export default {
-  // name: 'PageName',
+  components: {
+    TeamAuftragTable
+  }
 }
 </script>

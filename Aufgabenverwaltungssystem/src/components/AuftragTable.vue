@@ -38,7 +38,7 @@
             <q-separator />
             
             <q-card-section>
-              <q-btn label="show" size="12px" color="secondary" @click="show = true" />
+              <AuftragLink/>
             </q-card-section>
             <q-card-section >
               <q-btn label="add" size="12px" color="primary" @click="add = true" />
@@ -53,6 +53,7 @@
 
 <script>
 import { defineComponent,ref } from 'vue'
+import AuftragLink from "src/components/AuftragLink.vue";
 
 const columns = [
   {
@@ -106,6 +107,9 @@ const rows = [
 ]
 
 export default defineComponent({
+  components : {
+    AuftragLink
+  },
   name: 'AuftragTable',
   setup () { 
     return {
