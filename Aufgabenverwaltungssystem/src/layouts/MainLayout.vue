@@ -1,65 +1,54 @@
 <template>
-  <q-layout view="lHh lpR fFf">
-
+  <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title>
+        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"
+          DSDadwad
+        />
+        <q-item-label v-if="!leftDrawerOpen"> Threads </q-item-label>
+        <q-toolbar-title class="text-center">
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
-          AuftragCheck
+          Assignment Check
         </q-toolbar-title>
+        <q-item-label v-if="!rightDrawerOpen"> Menu </q-item-label>
 
-        <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer" />
+        <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer"/>
       </q-toolbar>
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
-      <q-list>
-        <q-item-label
-          header
-        >
-          <b class="q-pa-md">Threads</b>
-          <ThreadForm/>
+      <q-layout>
+        <q-item-label header>
+          <div class="row">
+            <div class="col-2">
+              <q-btn dense flat round icon="navigate_before" @click="toggleLeftDrawer"/>
+            </div>
+            <div class="col thread">
+            <b>Threads</b>
+            </div>
+          </div>
         </q-item-label>
-        
-        <q-btn-toggle
-        v-model="model"
-        class="my-custom-toggle q-pa-md"
-        no-caps
-        rounded
-        unelevated
-        toggle-color="primary"
-        color="white"
-        text-color="primary"
-        :options="[
-          {label: 'Global', value: 'one'},
-          {label: 'Team', value: 'two'},
-          {label: 'Eigene', value: 'three'}
-        ]"
-      />
-      <!--q-btn push color="primary" label="+" /-->
-      <ThreadLink
-        v-for="link in threadLinks"
-        :key="link.title"
-        v-bind="link"
-      />
-
-      </q-list>
+          <ThreadList/>
+          <ThreadForm/>
+      </q-layout>
     </q-drawer>
 
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
       <!-- drawer content -->
       <q-list>
-        <q-item-label
-          header
-        >
-          <b>Hallo *Personenname*!</b>
+        <q-item-label header>
+          <div class="row">
+            <div class="col-10 person">
+            <b>Hallo *Personenname*!</b>
+            </div>
+            <div class="col">
+              <q-btn dense flat round icon="navigate_next" @click="toggleRightDrawer"/>
+            </div>
+          </div>
         </q-item-label>
-
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
@@ -69,7 +58,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view/>
     </q-page-container>
 
   </q-layout>
@@ -79,6 +68,8 @@
 import EssentialLink from 'components/EssentialLink.vue'
 import ThreadForm from 'components/ThreadForm.vue'
 import ThreadLink from 'components/ThreadLink.vue';
+import ThreadList from "components/ThreadList";
+import {defineComponent, ref} from 'vue'
 
 const linksList = [
   {
@@ -111,23 +102,9 @@ const linksList = [
     icon: 'logout',
     link: '#/logout'
   }
-  
+
 ];
 
-const threadList = [
-  {
-    id: 1,
-    title: 'Test1',
-    created: Date.UTC(2003,0,1)
-  },
-  {
-    id: 2,
-    title: 'Test2',
-    created: Date.UTC(2000,10,1)
-  }
-];
-
-import { defineComponent,ref } from 'vue'
 
 export default defineComponent({
 
@@ -135,27 +112,35 @@ export default defineComponent({
   components: {
     EssentialLink,
     ThreadForm,
-    ThreadLink
+    ThreadLink,
+    ThreadList
   },
 
-  setup () {
+
+  setup() {
     const leftDrawerOpen = ref(false)
     const rightDrawerOpen = ref(false)
+    let threadLinks = null;
 
     return {
-      threadLinks: threadList,
-      model: ref('one'),
+      threadLinks,
       essentialLinks: linksList,
       leftDrawerOpen,
-      toggleLeftDrawer () {
+      toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
 
       rightDrawerOpen,
-      toggleRightDrawer () {
+      toggleRightDrawer() {
         rightDrawerOpen.value = !rightDrawerOpen.value
       }
     }
   }
 })
 </script>
+<style lang="sass" scoped>
+.person
+  padding-top: 10px
+.thread
+  padding-top: 10px
+</style>

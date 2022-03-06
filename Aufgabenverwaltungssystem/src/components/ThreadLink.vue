@@ -1,45 +1,59 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="link"
-  >
-    
-
-    <q-item-section>
-      <q-item-label>{{ title }}</q-item-label>
-      <q-item-label caption>
-        {{ created }}
-      </q-item-label>
-    </q-item-section>
-  </q-item>
+  <div>
+    <q-item clickable to="/" v-ripple>
+      <q-card class="my-card">
+        <q-card-section class="bg-primary text-white">
+          <div class="text-h8">{{ thread.topic }}</div>
+          <div class="text-subtitle2">by {{ thread.creator }}</div>
+        </q-card-section>
+        <q-separator/>
+          <div class="row">
+            <div class="col">
+              <q-card-actions align="left">
+                <q-item-label class="date-element">{{ thread.created }}</q-item-label>
+              </q-card-actions>
+            </div>
+            <div class="col">
+              <q-card-actions align="right">
+                <q-item-label caption>{{ this.answersCount }}</q-item-label>
+                <span class="material-icons">
+          chat_bubble
+          </span>
+              </q-card-actions>
+            </div>
+          </div>
+      </q-card>
+    </q-item>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import {defineComponent} from 'vue'
 
 export default defineComponent({
+  data() {
+
+    return {
+      answersCount: null,
+    }
+  },
   name: 'ThreadLink',
   props: {
-    id: {
-        type: Number,
-        required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-
-    created: {
-      type: Date,
-      default: Date.UTC()
-    },
-
-    link: {
-      type: String,
-      default: '#/thread/0'
-    }
+    thread: Object
+  },
+  async created() {
+    let answers = await fetch(this.backendUrl + "/threads/" + this.thread.id + "/answers").then(res => res.json())
+    this.answersCount = await answers.length
+    console.log(this.answersCount)
   }
 })
+
+
 </script>
+<style lang="sass" scoped>
+.my-card
+  width: 100%
+
+.material-icons, .date-element
+  padding: 5px
+</style>
