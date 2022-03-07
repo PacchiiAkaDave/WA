@@ -4,8 +4,8 @@
       <q-toolbar>
         <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"/>
         <q-item-label v-if="!leftDrawerOpen"> Threads</q-item-label>
-        <q-toolbar-title class="">
-          <q-item>
+        <q-toolbar-title>
+          <q-item class>
             <q-avatar>
               <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
             </q-avatar>
@@ -129,6 +129,9 @@ export default defineComponent({
     toggleLeftDrawer() {
       this.leftDrawerOpen = !this.leftDrawerOpen
       if(this.leftDrawerOpen){
+        if(this.rightDrawerOpen){
+          this.rightDrawerOpen=!this.rightDrawerOpen
+        }
         this.$router.push('/thread')
       }else{
         this.$router.push('/')
