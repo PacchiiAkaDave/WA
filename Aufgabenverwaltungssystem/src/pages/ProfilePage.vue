@@ -1,6 +1,7 @@
 <template>
-    <q-page class="flex flex-center">
-        <ProfileForm/>
+    <q-page >
+        <ProfileForm
+        />
   </q-page>
 </template>
 
@@ -11,6 +12,11 @@ export default {
   name: 'ProfilePage',
   components: {
       ProfileForm
+  },
+
+  data(){
+    return
   }
+
 }
 </script>
