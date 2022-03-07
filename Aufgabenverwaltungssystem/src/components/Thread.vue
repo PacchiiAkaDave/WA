@@ -1,18 +1,15 @@
 <template>
-    <div >
-    <h2>{{title}}</h2>
-    <h4>{{desc}}</h4>
-    <q-list>
-        <template v-for="answer in answers">
-            <br>
-            <q-item>
-                {{answer}}
-            </q-item>
-        </template>
-    </q-list>
+  <q-card flat bordered class="my-card">
+    <q-card-section class="q-pt-none bg-primary text-white">
+      <div class="text-h6">{{thread.topic}}</div>
+      <div class="text-subtitle2">by {{ thread.creator }}</div>
 
-    <AnswerForm/>
-    </div>
+    </q-card-section>
+    <q-separator inset />
+    <q-card-section>
+      {{thread.desc}}
+    </q-card-section>
+  </q-card>
 </template>
 
 <script>
@@ -22,32 +19,24 @@ import AnswerForm from "./AnswerForm.vue"
 export default defineComponent({
     name: 'Thread',
     components:{
-        AnswerForm
+
     },
-    props: {
-        id: {
-            type: Number,
-            required: true
-        },
-        title: {
-            type: String,
-            required: true
-        },
-        desc: {
-            type: String,
-            required: true
-        },
-        answers: {
-            type: Array,
-            default: () => []
-        }
+    props:{
+      thread: Object,
     },
     setup() {
-
-
         return{
-
         }
-    }
+    },
+
+
 })
 </script>
+<style lang="sass" scoped>
+.my-card
+  margin: 10px
+.text-h6
+  padding-top: 10px
+
+
+</style>

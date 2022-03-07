@@ -5,10 +5,11 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: '/profil', component: () => import('pages/ProfilePage.vue')},
+      { path: '/profil/', component: () => import('pages/ProfilePage.vue')},
       { path: '/team', component: () => import('pages/TeamPage.vue')},
       { path: '/auftrag', component: () => import('pages/SchwarzesBrett.vue')},
-      { path: '/thread', component: () => import('pages/ThreadPage.vue')}
+      { path: '/thread/:id', component: () => import('pages/ThreadPage.vue')},
+
     ]
   },
 

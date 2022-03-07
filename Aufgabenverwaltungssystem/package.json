@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "concurrently npm:modules:* ",
     "modules:quasar": "quasar dev",
-    "modules:backend": "json-server --watch db.json --routes routes.json"
+    "modules:backend": "json-server --watch db.json --routes routes.json",
+    "modules:globalVariables": "sleep 5 && cp src/boot/app.js .quasar/app.js"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

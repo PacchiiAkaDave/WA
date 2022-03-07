@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-item clickable to="/" v-ripple>
+    <q-item clickable :to="{path: '/thread/' + this.thread.id}" v-ripple>
       <q-card class="my-card">
         <q-card-section class="bg-primary text-white">
           <div class="text-h8">{{ thread.topic }}</div>
@@ -32,7 +32,6 @@ import {defineComponent} from 'vue'
 
 export default defineComponent({
   data() {
-
     return {
       answersCount: null,
     }
@@ -41,10 +40,11 @@ export default defineComponent({
   props: {
     thread: Object
   },
+
+
   async created() {
     let answers = await fetch(this.backendUrl + "/threads/" + this.thread.id + "/answers").then(res => res.json())
     this.answersCount = await answers.length
-    console.log(this.answersCount)
   }
 })
 

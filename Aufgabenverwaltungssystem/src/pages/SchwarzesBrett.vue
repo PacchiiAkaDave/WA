@@ -1,7 +1,7 @@
 <template>
-  <q-page padding>
-    <AuftragTable />
-  </q-page>
+    <q-page padding>
+      <AuftragTable />
+    </q-page>
 </template>
 
 <script>

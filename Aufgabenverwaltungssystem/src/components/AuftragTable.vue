@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md">
+  <q-layout class="q-pa-md">
     <q-table
       grid
       card-class="bg-primary text-white"
@@ -21,10 +21,10 @@
       <template v-slot:item="props">
           <div
           class="q-pa-xs col-xs-12 col-sm-6 col-md-4 col-lg-3 grid-style-transition"
-          
+
         >
           <q-card>
-            
+
             <q-list dense>
               <q-item v-for="col in props.cols.filter(col => col.name !== 'desc')" :key="col.name">
                 <q-item-section>
@@ -36,19 +36,19 @@
               </q-item>
             </q-list>
             <q-separator />
-            
+
             <q-card-section>
               <AuftragLink/>
             </q-card-section>
             <q-card-section >
               <q-btn label="add" size="12px" color="primary" @click="add = true" />
             </q-card-section>
-            
+
           </q-card>
         </div>
       </template>
     </q-table>
-  </div>
+  </q-layout>
 </template>
 
 <script>
@@ -72,13 +72,13 @@ const rows = [
   {
     name: 'Test 1',
     expiration: 2022
-    
+
   },
   {
     name: 'Test 2',
     desc: 'testen testen testen',
     expiration: 2022
-    
+
   },
   {
     name: 'Test 3',
@@ -111,7 +111,7 @@ export default defineComponent({
     AuftragLink
   },
   name: 'AuftragTable',
-  setup () { 
+  setup () {
     return {
       filter: ref(''),
       columns,

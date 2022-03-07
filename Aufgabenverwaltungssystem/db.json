@@ -17,7 +17,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/2",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "ACCEPTED",
@@ -27,7 +26,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/3",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "DONE",
@@ -37,7 +35,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/4",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "ACCEPTED",
@@ -47,7 +44,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/5",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "DONE",
@@ -57,7 +53,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/6",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "EXPIRED",
@@ -67,7 +62,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/7",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "DONE",
@@ -77,7 +71,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/8",
       "teamId": 0
-
     },
     {
       "assignmentStatus": "OPEN",
@@ -87,7 +80,6 @@
       "title": "Api Test",
       "uri": "http://localhost:3000/assignments/9",
       "teamId": 0
-
     }
   ],
   "teams": [
@@ -127,9 +119,9 @@
     {
       "created": "2022-12-12",
       "creator": "bjplutka",
-      "desc": "Testing the api with this object",
+      "desc": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget malesuada felis. Aenean feugiat suscipit est ac ornare. Quisque pellentesque turpis ut velit feugiat ultricies. In hendrerit erat mattis nunc sagittis venenatis. Quisque nec mauris id erat interdum rhoncus. Vivamus risus metus, varius tincidunt neque nec, elementum vestibulum massa. Morbi vehicula lacinia risus, sed luctus nisl egestas et. Aenean ornare nisi in elit ultrices varius. Sed aliquam tellus consectetur, euismod enim quis, suscipit neque.\n\nNulla facilisi. Donec consectetur rutrum erat quis interdum. Nullam eu ante nunc. Aenean pulvinar tellus vitae enim maximus maximus. Donec pulvinar pharetra volutpat. Donec commodo felis et vestibulum vehicula. Nunc vel lectus in arcu luctus placerat. Ut nisi nulla, aliquet vitae tempor nec, imperdiet ut tellus.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget malesuada felis. Aenean feugiat suscipit est ac ornare. Quisque pellentesque turpis ut velit feugiat ultricies. In hendrerit erat mattis nunc sagittis venenatis. Quisque nec mauris id erat interdum rhoncus. Vivamus risus metus, varius tincidunt neque nec, elementum vestibulum massa. Morbi vehicula lacinia risus, sed luctus nisl egestas et. Aenean ornare nisi in elit ultrices varius. Sed aliquam tellus consectetur, euismod enim quis, suscipit neque.\n\nNulla facilisi. Donec consectetur rutrum erat quis interdum. Nullam eu ante nunc. Aenean pulvinar tellus vitae enim maximus maximus. Donec pulvinar pharetra volutpat. Donec commodo felis et vestibulum vehicula. Nunc vel lectus in arcu luctus placerat. Ut nisi nulla, aliquet vitae tempor nec, imperdiet ut tellus.\n\n",
       "id": 1,
-      "topic": "Api Test lololol",
+      "topic": "Curabitur blandit ex ipsum",
       "type": "GlobalThread",
       "uri": "http://localhost:3000/threads/1",
       "personId": 3,
@@ -138,9 +130,9 @@
     {
       "created": "2022-12-12",
       "creator": "bjplutka",
-      "desc": "Testing the api with this object",
+      "desc": "In varius placerat feugiat. Aliquam pellentesque sapien mauris, et luctus dolor feugiat non. Sed vulputate justo sit amet sagittis dignissim. Pellentesque vitae neque magna. Curabitur lacinia diam enim. Nulla dignissim erat est. Quisque sed justo nec enim finibus pellentesque ut ut sem. Nulla ultrices nisl congue, vestibulum magna quis, pharetra libero. Suspendisse iaculis magna vel enim rutrum bibendum. Nam in efficitur erat. Mauris sodales ultricies lacus ut pharetra. In luctus pellentesque nisl id gravida. ",
       "id": 2,
-      "topic": "Api Test",
+      "topic": "Nulla facilisi.",
       "type": "TeamThread",
       "uri": "http://localhost:3000/threads/2",
       "personId": 3,
@@ -151,7 +143,7 @@
       "creator": "nemorais",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet odio nec libero blandit facilisis eget sed metus. Phasellus viverra, lorem ut maximus tincidunt, sapien nibh vehicula turpis, vitae hendrerit erat dolor quis velit. Nunc eu interdum dolor. Sed ornare porta vestibulum. Aenean orci lacus, consequat ut ultricies at, consectetur in magna. Nam pharetra tristique risus, vitae sollicitudin nulla maximus eget. Ut at luctus libero. Duis cursus, nunc in interdum vehicula, massa nulla ultrices nisi, eu imperdiet enim odio sit amet diam. Donec iaculis arcu lectus, non luctus lacus pellentesque eget. Integer turpis magna, pulvinar a egestas ut, faucibus eget eros. Cras tristique mi eget dolor gravida tempus. Mauris bibendum, lorem vitae congue interdum, lorem nibh consectetur ligula, in sagittis eros turpis sed augue. Donec finibus pellentesque ornare. ",
       "id": 4,
-      "topic": "Verlängerung Abgabefrist OIKA.",
+      "topic": "Vdolor feugiat non.",
       "type": "GlobalThread",
       "uri": "http://localhost:3000/threads/4",
       "personId": 1,
@@ -160,34 +152,67 @@
     {
       "created": "2022-12-12",
       "creator": "jaweimer",
-      "desc": "Testing the api with this object",
+      "desc": "Nulla facilisi. Donec consectetur rutrum erat quis interdum. Nullam eu ante nunc. Aenean pulvinar tellus vitae enim maximus maximus. Donec pulvinar pharetra volutpat. Donec commodo felis et vestibulum vehicula. Nunc vel lectus in arcu luctus placerat. Ut nisi nulla, aliquet vitae tempor nec, imperdiet ut tellus. ",
       "id": 3,
-      "topic": "Api Test",
+      "topic": "Nunc eu felis arcu.",
       "type": "TeamThread",
       "uri": "http://localhost:3000/threads/3",
       "personId": 2,
       "teamId": 1
     },
     {
-      "created": "2022-12-12",
-      "creator": "jaweimer",
-      "desc": "Testing the api with this object",
-      "id": 4,
-      "topic": "Api Test",
+      "created": "2022-03-06",
+      "creator": "bjplutka",
+      "desc": "\"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\"\n\"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...\"",
+      "topic": "Boloto dop luim",
       "type": "TeamThread",
-      "uri": "http://localhost:3000/threads/4",
-      "personId": 2,
-      "teamId": 1
+      "teamId": 1,
+      "personId": 3,
+      "id": 5
     }
-
   ],
   "answers": [
-  {
-    "content": "This is an Api test answer !!",
-    "creator": "jaweimer",
-    "id": 1,
-    "threadId": 1,
-    "personId": 2
-  }
-    ]
+    {
+      "content": "This is an Api test answer !!",
+      "creator": "jaweimer",
+      "id": 1,
+      "threadId": 1,
+      "personId": 2
+    },
+    {
+      "creator": "bjplutka",
+      "content": "asdasdasd",
+      "threadId": 1,
+      "personId": 3,
+      "id": 2
+    },
+    {
+      "creator": "bjplutka",
+      "content": "asdsadasd",
+      "threadId": 1,
+      "personId": 3,
+      "id": 3
+    },
+    {
+      "creator": "bjplutka",
+      "content": "123123",
+      "threadId": 1,
+      "personId": 3,
+      "id": 4
+    },
+    {
+      "creator": "bjplutka",
+      "content": "good",
+      "threadId": 1,
+      "personId": 3,
+      "id": 5
+    },
+    {
+      "creator": "bjplutka",
+      "content": "fsdffdsdf",
+      "threadId": 2,
+      "personId": 3,
+      "id": 6
+    }
+  ]
 }

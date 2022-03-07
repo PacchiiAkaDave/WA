@@ -1,18 +1,18 @@
 <template>
-  <q-layout view="hHh lpR fFf">
+  <q-layout view="hHh LpR lFr" class="main-frame">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"
-          DSDadwad
+               DSDadwad
         />
-        <q-item-label v-if="!leftDrawerOpen"> Threads </q-item-label>
+        <q-item-label v-if="!leftDrawerOpen"> Threads</q-item-label>
         <q-toolbar-title class="text-center">
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
           Assignment Check
         </q-toolbar-title>
-        <q-item-label v-if="!rightDrawerOpen"> Menu </q-item-label>
+        <q-item-label v-if="!rightDrawerOpen"> Menu</q-item-label>
 
         <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer"/>
       </q-toolbar>
@@ -20,41 +20,39 @@
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
-      <q-layout>
+      <q-layout container style="height: 90vh">
         <q-item-label header>
           <div class="row">
             <div class="col-2">
               <q-btn dense flat round icon="navigate_before" @click="toggleLeftDrawer"/>
             </div>
             <div class="col thread">
-            <b>Threads</b>
+              <b>Threads</b>
             </div>
           </div>
         </q-item-label>
-          <ThreadList/>
-          <ThreadForm/>
+        <ThreadList/>
+        <ThreadForm/>
       </q-layout>
     </q-drawer>
 
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
       <!-- drawer content -->
-      <q-list>
+      <q-layout container style="height: 90vh">
         <q-item-label header>
           <div class="row">
             <div class="col-10 person">
-            <b>Hallo *Personenname*!</b>
+              <b>Hallo *Personenname*!</b>
             </div>
             <div class="col">
               <q-btn dense flat round icon="navigate_next" @click="toggleRightDrawer"/>
             </div>
           </div>
         </q-item-label>
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+        <div class="list-frame" v-for="obj in essentialLinks" :key="obj.title">
+          <EssentialLink :obj="obj"></EssentialLink>
+        </div>
+      </q-layout>
     </q-drawer>
 
     <q-page-container>
@@ -76,31 +74,31 @@ const linksList = [
     title: 'Profil',
     caption: 'Profil bearbeiten',
     icon: 'manage_accounts',
-    link: '#/profil'
+    link: '/profil'
   },
   {
     title: 'Team',
     caption: 'Details deines Teams',
     icon: 'groups',
-    link: '#/team'
+    link: '/team'
   },
   {
     title: 'Schwarzes Brett',
     caption: 'schau nach offenen Auftraegen',
     icon: 'assignment',
-    link: '#/auftrag'
+    link: '/auftrag'
   },
   {
     title: 'Einstellungen',
     caption: 'Einstellungen aendern',
     icon: 'settings',
-    link: '#/einstellungen'
+    link: '/einstellungen'
   },
   {
     title: 'Abmelden',
     caption: 'abmelden',
     icon: 'logout',
-    link: '#/logout'
+    link: '/logout'
   }
 
 ];
@@ -141,6 +139,9 @@ export default defineComponent({
 <style lang="sass" scoped>
 .person
   padding-top: 10px
+
 .thread
   padding-top: 10px
+
+
 </style>
