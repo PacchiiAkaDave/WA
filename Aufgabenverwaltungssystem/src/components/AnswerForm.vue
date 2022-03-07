@@ -18,7 +18,7 @@
         </q-card-actions>
       </q-card>
     </q-dialog>
-    
+
 </template>
 
 <script>
@@ -28,9 +28,8 @@ export default defineComponent({
   name: 'AnswerForm',
   setup () {
     return {
-      
+
       answer: ref(false),
-    
       desc: ref(''),
     }
   }

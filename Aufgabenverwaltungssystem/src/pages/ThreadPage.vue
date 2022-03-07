@@ -1,9 +1,9 @@
 <!-- mit /#/thread auf die page-->
 <template>
 
-  <div view ="hHh Lpr lFr">
-    <Thread :thread="this.thread"/>
-    <div v-for="answer in this.answers">
+  <div view="hHh Lpr lFr" id="top">
+    <Thread :thread="this.thread" :key="this.componentKey"/>
+    <div v-for="answer in this.answers" :key="this.componentKey">
       <Answer :answer="answer"></Answer>
     </div>
     <q-footer class="bg-white">
@@ -30,9 +30,12 @@ export default {
   data() {
     return {
       id: this.$route.params.id,
+      content: ref(''),
+
       thread: null,
       answers: null,
-      content: ref('')
+      componentKey: 0,
+      refresh: false
 
     }
   },
@@ -40,20 +43,26 @@ export default {
     this.$watch(
       () => this.$route.params,
       async (toParams, previousParams) => {
-        this.thread = await fetch(this.backendUrl + "/threads/" + toParams.id).then(res => res.json())
-        this.answers = await fetch(this.backendUrl + "/threads/" + toParams.id + "/answers").then(res => res.json())
+        this.answers = null
+        await this.fetchData(toParams.id)
       }
     )
-    this.thread = await fetch(this.backendUrl + "/threads/" + this.id).then(res => res.json()),
-      this.answers = await fetch(this.backendUrl + "/threads/" + this.id + "/answers").then(res => res.json())
+    await this.fetchData(this.id)
   },
+  async updated(){
+    if (this.refresh){
+      window.scrollTo(0,document.body.scrollHeight*2);
+      this.refresh=!this.refresh
+    }
+  },
+
   components: {
     Answer,
     Thread
   },
-  methods:{
-    async submitAnswer(){
-      const person = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser ).then(res => res.json()).then(json => json[0])
+  methods: {
+    async submitAnswer() {
+      const person = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json()).then(json => json[0])
       const res = await fetch(this.backendUrl + "/answers", {
         method: 'POST',
         headers: {
@@ -67,13 +76,22 @@ export default {
           personId: person.id
         })
       })
-    this.content = ref('')
-    }
+      this.content = ref('')
+      this.answers = await fetch(this.backendUrl + "/threads/" + this.id + "/answers").then(res => res.json())
+      this.componentKey +=1;
+      this.refresh = true;
+
+    },
+    async fetchData(id) {
+      this.thread = await fetch(this.backendUrl + "/threads/" + id).then(res => res.json())
+      this.answers = await fetch(this.backendUrl + "/threads/" + id + "/answers").then(res => res.json())
+    },
+
   },
 
 }
 
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 
 </style>

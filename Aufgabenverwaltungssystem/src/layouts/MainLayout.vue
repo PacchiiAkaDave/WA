@@ -2,23 +2,22 @@
   <q-layout view="hHh LpR lFr" class="main-frame">
     <q-header elevated class="bg-primary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"
-               DSDadwad
-        />
+        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"/>
         <q-item-label v-if="!leftDrawerOpen"> Threads</q-item-label>
-        <q-toolbar-title class="text-center">
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          Assignment Check
+        <q-toolbar-title class="">
+          <q-item>
+            <q-avatar>
+              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+            </q-avatar>
+            Assignment Check
+          </q-item>
         </q-toolbar-title>
         <q-item-label v-if="!rightDrawerOpen"> Menu</q-item-label>
-
         <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer"/>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
       <q-layout container style="height: 90vh">
         <q-item-label header>
@@ -31,12 +30,20 @@
             </div>
           </div>
         </q-item-label>
-        <ThreadList/>
-        <ThreadForm/>
+        <div class="q-pa-md">
+          <div class="column" style="height: 75vh">
+            <div class="col-8">
+              <ThreadList/>
+            </div>
+            <div class="col">
+              <ThreadForm/>
+            </div>
+          </div>
+        </div>
       </q-layout>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer v-model="rightDrawerOpen" side="right" bordered>
       <!-- drawer content -->
       <q-layout container style="height: 90vh">
         <q-item-label header>
@@ -113,25 +120,42 @@ export default defineComponent({
     ThreadLink,
     ThreadList
   },
+  updated() {
+    console.log("updated")
+  },
 
 
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+      if(this.leftDrawerOpen){
+        this.$router.push('/thread')
+      }else{
+        this.$router.push('/')
+      }
+    },
+    toggleRightDrawer() {
+      this.rightDrawerOpen = !this.rightDrawerOpen
+      if(this.rightDrawerOpen){
+        if(this.leftDrawerOpen){
+          this.leftDrawerOpen=!this.rightDrawerOpen
+        }
+        this.$router.push('/profil')
+      }else{
+        this.$router.push('/')
+      }
+    }
+  },
+  props: {
+    leftDrawerOpen: null,
+    rightDrawerOpen: null,
+  },
   setup() {
-    const leftDrawerOpen = ref(false)
-    const rightDrawerOpen = ref(false)
-    let threadLinks = null;
 
     return {
-      threadLinks,
       essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer() {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-
-      rightDrawerOpen,
-      toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value
-      }
+      leftDrawerOpen: ref(false),
+      rightDrawerOpen: ref(false)
     }
   }
 })

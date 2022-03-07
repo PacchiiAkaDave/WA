@@ -52,22 +52,19 @@ export default {
     },
     async fetchData(){
       const user = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json()).then(json => json[0])
-      this.globalThreads = await fetch(this.backendUrl + "/threads?type=GlobalThread").then(res => res.json())
-      this.teamThreads = await fetch(this.backendUrl + "/teams/" + user.teamId + "/threads").then(res => res.json())
-      this.selfThreads = await fetch(this.backendUrl + "/persons/" + user.id + "/threads").then(res => res.json())
+      this.globalThreads = await fetch(this.backendUrl + "/threads?type=GlobalThread&_sort=id&_order=desc").then(res => res.json())
+      this.teamThreads = await fetch(this.backendUrl + "/teams/" + user.teamId + "/threads?_sort=id&_order=desc").then(res => res.json())
+      this.selfThreads = await fetch(this.backendUrl + "/persons/" + user.id + "/threads?_sort=id&_order=desc").then(res => res.json())
     }
   },
   components: {
     ThreadLink,
   },
   async created() {
-    const user = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json()).then(json => json[0])
-    this.globalThreads = await fetch(this.backendUrl + "/threads?type=GlobalThread").then(res => res.json())
-    this.teamThreads = await fetch(this.backendUrl + "/teams/" + user.teamId + "/threads").then(res => res.json())
-    this.selfThreads = await fetch(this.backendUrl + "/persons/" + user.id + "/threads").then(res => res.json())
+    await this.fetchData()
 
   },
-  setup(props,context) {
+  setup() {
     return {
       model: ref('one'),
 

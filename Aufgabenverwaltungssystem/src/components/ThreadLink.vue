@@ -43,8 +43,20 @@ export default defineComponent({
 
 
   async created() {
-    let answers = await fetch(this.backendUrl + "/threads/" + this.thread.id + "/answers").then(res => res.json())
-    this.answersCount = await answers.length
+   this.fetchData()
+  },
+
+  async beforeUpdate(){
+   this.fetchData()
+  },
+
+  methods:{
+    async fetchData() {
+      let answers = await fetch(this.backendUrl + "/threads/" + this.thread.id + "/answers").then(res => res.json())
+      this.answersCount = await answers.length
+
+    }
+
   }
 })
 
