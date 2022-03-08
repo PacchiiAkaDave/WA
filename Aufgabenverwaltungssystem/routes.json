@@ -1,0 +1,5 @@
+{
+  "/api/*": "/$1",
+  "/answers/:threadid": "/threads/:threadid?answers"
+
+}

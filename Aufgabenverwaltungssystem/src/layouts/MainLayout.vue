@@ -1,75 +1,68 @@
 <template>
-  <q-layout view="lHh lpR fFf">
-
-    <q-header elevated class="bg-primary text-white">
+  <q-layout view="hHh LpR lFr" class="main-frame">
+    <q-header elevated class="bg-secondary text-white">
       <q-toolbar>
-        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer" />
-
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          AuftragCheck
+        <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"/>
+        <q-item-label v-if="!leftDrawerOpen"></q-item-label>
+        <q-toolbar-title class="text-center">
+          Work
+            <q-avatar>
+              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" onclick="'/'">
+            </q-avatar>
+          Check
         </q-toolbar-title>
-
-        <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer" />
+        <q-item-label v-if="!rightDrawerOpen"></q-item-label>
+        <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer"/>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer v-model="leftDrawerOpen" side="left" bordered>
       <!-- drawer content -->
-      <q-list>
-        <q-item-label
-          header
-        >
-          <b class="q-pa-md">Threads</b>
-          <ThreadForm/>
+      <q-layout container style="height: 90vh">
+        <q-item-label header>
+          <div class="row">
+            <div class="col-2">
+              <q-btn dense flat round icon="navigate_before" @click="toggleLeftDrawer"/>
+            </div>
+            <div class="col thread">
+              <b>Threads</b>
+            </div>
+          </div>
         </q-item-label>
-        
-        <q-btn-toggle
-        v-model="model"
-        class="my-custom-toggle q-pa-md"
-        no-caps
-        rounded
-        unelevated
-        toggle-color="primary"
-        color="white"
-        text-color="primary"
-        :options="[
-          {label: 'Global', value: 'one'},
-          {label: 'Team', value: 'two'},
-          {label: 'Eigene', value: 'three'}
-        ]"
-      />
-      <!--q-btn push color="primary" label="+" /-->
-      <ThreadLink
-        v-for="link in threadLinks"
-        :key="link.title"
-        v-bind="link"
-      />
-
-      </q-list>
+        <div class="q-pa-md">
+          <div class="column" style="height: 75vh">
+            <div class="col-8">
+              <ThreadList/>
+            </div>
+            <div class="col">
+              <ThreadForm/>
+            </div>
+          </div>
+        </div>
+      </q-layout>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
+    <q-drawer v-model="rightDrawerOpen" side="right" bordered>
       <!-- drawer content -->
-      <q-list>
-        <q-item-label
-          header
-        >
-          <b>Hallo *Personenname*!</b>
+      <q-layout container style="height: 90vh">
+        <q-item-label header>
+          <div class="row">
+            <div class="col-10 person">
+              <b>Hello {{this.username}}</b>
+            </div>
+            <div class="col">
+              <q-btn dense flat round icon="navigate_next" @click="toggleRightDrawer"/>
+            </div>
+          </div>
         </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
+        <div class="list-frame" v-for="obj in essentialLinks" :key="obj.title">
+          <EssentialLink :obj="obj"></EssentialLink>
+        </div>
+      </q-layout>
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view/>
     </q-page-container>
 
   </q-layout>
@@ -79,83 +72,102 @@
 import EssentialLink from 'components/EssentialLink.vue'
 import ThreadForm from 'components/ThreadForm.vue'
 import ThreadLink from 'components/ThreadLink.vue';
+import ThreadList from "components/ThreadList";
+import {defineComponent, ref} from 'vue'
 
 const linksList = [
   {
-    title: 'Profil',
-    caption: 'Profil bearbeiten',
+    title: 'Profile',
+    caption: 'Edit profile information',
     icon: 'manage_accounts',
-    link: '#/profil'
+    link: '/profil'
   },
   {
     title: 'Team',
-    caption: 'Details deines Teams',
+    caption: 'Edit your team.',
     icon: 'groups',
-    link: '#/team'
-  },
-  {
-    title: 'Schwarzes Brett',
-    caption: 'schau nach offenen Auftraegen',
-    icon: 'assignment',
-    link: '#/auftrag'
+    link: '/error'
   },
   {
     title: 'Einstellungen',
     caption: 'Einstellungen aendern',
     icon: 'settings',
-    link: '#/einstellungen'
+    link: '/error'
   },
   {
     title: 'Abmelden',
     caption: 'abmelden',
     icon: 'logout',
-    link: '#/logout'
+    link: '/error'
   }
-  
+
 ];
 
-const threadList = [
-  {
-    id: 1,
-    title: 'Test1',
-    created: Date.UTC(2003,0,1)
-  },
-  {
-    id: 2,
-    title: 'Test2',
-    created: Date.UTC(2000,10,1)
-  }
-];
-
-import { defineComponent,ref } from 'vue'
 
 export default defineComponent({
-
+  data(){
+    return{
+      user: null,
+      username: " "
+    }
+  },
   name: 'MainLayout',
   components: {
     EssentialLink,
     ThreadForm,
-    ThreadLink
+    ThreadLink,
+    ThreadList
   },
+ async created() {
+    this.user = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json()).then(json => json[0])
+    this.username = this.user.firstName + " " + this.user.lastName
+ },
 
-  setup () {
-    const leftDrawerOpen = ref(false)
-    const rightDrawerOpen = ref(false)
+
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+      if(this.leftDrawerOpen){
+        if(this.rightDrawerOpen){
+          this.rightDrawerOpen=!this.rightDrawerOpen
+        }
+        this.$router.push('/thread')
+      }else{
+        this.$router.push('/')
+      }
+    },
+    toggleRightDrawer() {
+      this.rightDrawerOpen = !this.rightDrawerOpen
+      if(this.rightDrawerOpen){
+        if(this.leftDrawerOpen){
+          this.leftDrawerOpen=!this.rightDrawerOpen
+        }
+        this.$router.push('/profil')
+      }else{
+        this.$router.push('/')
+      }
+    }
+  },
+  props: {
+    leftDrawerOpen: null,
+    rightDrawerOpen: null,
+  },
+  setup() {
 
     return {
-      threadLinks: threadList,
-      model: ref('one'),
       essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      },
-
-      rightDrawerOpen,
-      toggleRightDrawer () {
-        rightDrawerOpen.value = !rightDrawerOpen.value
-      }
+      leftDrawerOpen: ref(false),
+      rightDrawerOpen: ref(false)
     }
   }
 })
 </script>
+<style lang="sass" scoped>
+.person
+  padding-top: 10px
+
+.thread
+  padding-top: 10px
+
+
+</style>

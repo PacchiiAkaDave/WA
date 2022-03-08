@@ -7,8 +7,9 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: '/profil', component: () => import('pages/ProfilePage.vue')},
       { path: '/team', component: () => import('pages/TeamPage.vue')},
-      { path: '/auftrag', component: () => import('pages/SchwarzesBrett.vue')},
-      { path: '/thread', component: () => import('pages/ThreadPage.vue')}
+      { path: '/thread/:id', component: () => import('pages/ThreadPage.vue')},
+      { path: '/thread', component: () => import('pages/NoThread.vue')},
+
     ]
   },
 
