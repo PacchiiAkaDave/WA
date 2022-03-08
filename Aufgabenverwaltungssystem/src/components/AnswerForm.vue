@@ -1,5 +1,5 @@
 <template>
-  <q-btn label="answer" color="primary" @click="answer = true" />
+  <q-btn label="answer" color="secondary" @click="answer = true" />
 
   <q-dialog v-model="answer" persistent>
       <q-card style="min-width: 350px">

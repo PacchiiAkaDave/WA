@@ -37,7 +37,7 @@
       "teamId": 0
     },
     {
-      "assignmentStatus": "ACCEPTED",
+      "assignmentStatus": "DONE",
       "desc": "Nam malesuada odio ut consectetur tempor. Etiam hendrerit tincidunt leo, nec cursus ligula. Vivamus non sollicitudin ligula.",
       "due": "2022-04-05",
       "id": 5,
@@ -73,10 +73,136 @@
       "teamId": 0
     },
     {
-      "assignmentStatus": "DONE",
+      "assignmentStatus": "OPEN",
       "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
       "due": "2022-08-05",
       "id": 9,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 10,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/1ß",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 11,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/11",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 12,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/12",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 13,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/13",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 14,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 15,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "OPEN",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 16,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 0
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 17,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 1
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 18,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 1
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 19,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 1
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 20,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 1
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 21,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 1
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 22,
+      "title": "Aut orci",
+      "uri": "http://localhost:3000/assignments/9",
+      "teamId": 1
+    },
+    {
+      "assignmentStatus": "ACCEPTED",
+      "desc": "Nunc hendrerit magna sit amet turpis cursus, a finibus leo feugiat. In posuere tempus nunc eget rhoncus. Suspendisse velit elit, maximus at quam sed, rhoncus pharetra ligula",
+      "due": "2022-08-05",
+      "id": 23,
       "title": "Aut orci",
       "uri": "http://localhost:3000/assignments/9",
       "teamId": 1
@@ -199,8 +325,8 @@
     {
       "created": "2022-03-07",
       "creator": "bjplutka",
-      "desc": "asdasd",
-      "topic": "asdasd",
+      "desc": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "topic": "Blobalious",
       "type": "GlobalThread",
       "teamId": null,
       "personId": 3,
@@ -209,8 +335,8 @@
     {
       "created": "2022-03-07",
       "creator": "bjplutka",
-      "desc": "qweqweqwe",
-      "topic": "qweqweqwe",
+      "topic": "Aido Jiolo",
+      "desc": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
       "type": "GlobalThread",
       "teamId": null,
       "personId": 3,
@@ -219,585 +345,74 @@
   ],
   "answers": [
     {
-      "content": "This is an Api test answer !!",
+      "content": "This Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt.  an Api test answer !!",
       "creator": "jaweimer",
       "id": 1,
-      "threadId": 1,
+      "threadId": 2,
       "personId": 2
     },
     {
-      "creator": "bjplutka",
-      "content": "asdasdasd",
-      "threadId": 1,
+      "creator": "nemorais",
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 3,
       "personId": 3,
       "id": 2
     },
     {
-      "creator": "bjplutka",
-      "content": "asdsadasd",
+      "creator": "jaweimer",
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
       "threadId": 1,
       "personId": 3,
       "id": 3
     },
     {
-      "creator": "bjplutka",
-      "content": "123123",
-      "threadId": 1,
+      "creator": "evamusterfrau",
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 4,
       "personId": 3,
       "id": 4
     },
     {
-      "creator": "bjplutka",
-      "content": "good",
-      "threadId": 1,
+      "creator": "maxmusterman",
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 5,
       "personId": 3,
       "id": 5
     },
     {
       "creator": "bjplutka",
-      "content": "fsdffdsdf",
-      "threadId": 2,
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 6,
       "personId": 3,
       "id": 6
     },
     {
       "creator": "bjplutka",
-      "content": "Test",
-      "threadId": 4,
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 7,
+      "personId": 3,
+      "id": 7
+    },
+    {
+      "creator": "jaweimer",
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 7,
+      "personId": 3,
+      "id": 7
+    },
+    {
+      "creator": "maxmustermann",
+      "content": "Etiam aliquam nisl non mi vestibulum mattis. Mauris velit lacus, porta a ornare nec, pellentesque et ante. Proin finibus sem sit amet vestibulum luctus. Ut et tellus sem. Aliquam fringilla mauris tortor, quis volutpat justo suscipit sit amet. Cras ac nisi porta, pellentesque tortor non, pharetra augue. Mauris elementum massa a augue tempor convallis. Curabitur vel turpis dignissim, euismod ligula quis, volutpat tortor. Vivamus imperdiet ut tortor consequat tincidunt. ",
+      "threadId": 7,
       "personId": 3,
       "id": 7
     },
     {
       "creator": "bjplutka",
-      "content": ".l.",
-      "threadId": 1,
+      "content": "asdasdasdd",
+      "threadId": 7,
       "personId": 3,
       "id": 8
-    },
-    {
-      "creator": "bjplutka",
-      "content": "saddas",
-      "threadId": 1,
-      "personId": 3,
-      "id": 9
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sadasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 10
-    },
-    {
-      "creator": "bjplutka",
-      "content": "ghjvbhjbhjkbnk",
-      "threadId": 1,
-      "personId": 3,
-      "id": 11
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 12
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 13
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 14
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 15
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 16
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 17
-    },
-    {
-      "creator": "bjplutka",
-      "content": "jhjkkjhjkhjkh",
-      "threadId": 1,
-      "personId": 3,
-      "id": 18
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 4,
-      "personId": 3,
-      "id": 19
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdas",
-      "threadId": 4,
-      "personId": 3,
-      "id": 20
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sadasd",
-      "threadId": 4,
-      "personId": 3,
-      "id": 21
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 4,
-      "personId": 3,
-      "id": 22
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdsad",
-      "threadId": 4,
-      "personId": 3,
-      "id": 23
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdads",
-      "threadId": 4,
-      "personId": 3,
-      "id": 24
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 25
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 26
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdad",
-      "threadId": 1,
-      "personId": 3,
-      "id": 27
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 28
-    },
-    {
-      "creator": "bjplutka",
-      "content": "21212",
-      "threadId": 1,
-      "personId": 3,
-      "id": 29
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 30
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdsda",
-      "threadId": 1,
-      "personId": 3,
-      "id": 31
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 32
-    },
-    {
-      "creator": "bjplutka",
-      "content": "1221122",
-      "threadId": 1,
-      "personId": 3,
-      "id": 33
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 34
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 35
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 36
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 37
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 38
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 39
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 40
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 41
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdasd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 42
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 43
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdads",
-      "threadId": 1,
-      "personId": 3,
-      "id": 44
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sadda",
-      "threadId": 1,
-      "personId": 3,
-      "id": 45
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 46
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 47
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 48
-    },
-    {
-      "creator": "bjplutka",
-      "content": "addas",
-      "threadId": 1,
-      "personId": 3,
-      "id": 49
-    },
-    {
-      "creator": "bjplutka",
-      "content": "213123123",
-      "threadId": 1,
-      "personId": 3,
-      "id": 50
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asd",
-      "threadId": 1,
-      "personId": 3,
-      "id": 51
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sdffsdf",
-      "threadId": 1,
-      "personId": 3,
-      "id": 52
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sdfdsfsdf",
-      "threadId": 1,
-      "personId": 3,
-      "id": 53
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sdfsdfsdfsdfsdfs",
-      "threadId": 1,
-      "personId": 3,
-      "id": 54
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 1,
-      "personId": 3,
-      "id": 55
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asds",
-      "threadId": 4,
-      "personId": 3,
-      "id": 56
-    },
-    {
-      "creator": "bjplutka",
-      "content": "haha",
-      "threadId": 6,
-      "personId": 3,
-      "id": 57
-    },
-    {
-      "creator": "bjplutka",
-      "content": "ok",
-      "threadId": 6,
-      "personId": 3,
-      "id": 58
-    },
-    {
-      "creator": "bjplutka",
-      "content": "dfgfgd",
-      "threadId": 6,
-      "personId": 3,
-      "id": 59
-    },
-    {
-      "creator": "bjplutka",
-      "content": "hhh",
-      "threadId": 6,
-      "personId": 3,
-      "id": 60
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asddadadakfmadlkmf m",
-      "threadId": 1,
-      "personId": 3,
-      "id": 61
-    },
-    {
-      "creator": "bjplutka",
-      "content": "2342434234234234234",
-      "threadId": 1,
-      "personId": 3,
-      "id": 62
-    },
-    {
-      "creator": "bjplutka",
-      "content": "234234234234",
-      "threadId": 4,
-      "personId": 3,
-      "id": 63
-    },
-    {
-      "creator": "bjplutka",
-      "content": "423525245245",
-      "threadId": 4,
-      "personId": 3,
-      "id": 64
-    },
-    {
-      "creator": "bjplutka",
-      "content": "23423424234",
-      "threadId": 4,
-      "personId": 3,
-      "id": 65
-    },
-    {
-      "creator": "bjplutka",
-      "content": "2455255",
-      "threadId": 4,
-      "personId": 3,
-      "id": 66
-    },
-    {
-      "creator": "bjplutka",
-      "content": "antworten",
-      "threadId": 4,
-      "personId": 3,
-      "id": 67
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sadasd",
-      "threadId": 6,
-      "personId": 3,
-      "id": 68
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 6,
-      "personId": 3,
-      "id": 69
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asasasd",
-      "threadId": 6,
-      "personId": 3,
-      "id": 70
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 6,
-      "personId": 3,
-      "id": 71
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 6,
-      "personId": 3,
-      "id": 72
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 6,
-      "personId": 3,
-      "id": 73
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 6,
-      "personId": 3,
-      "id": 74
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdsa",
-      "threadId": 6,
-      "personId": 3,
-      "id": 75
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 4,
-      "personId": 3,
-      "id": 76
-    },
-    {
-      "creator": "bjplutka",
-      "content": "",
-      "threadId": 4,
-      "personId": 3,
-      "id": 77
-    },
-    {
-      "creator": "bjplutka",
-      "content": "ddsaasdasdas",
-      "threadId": 4,
-      "personId": 3,
-      "id": 78
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasdas",
-      "threadId": 4,
-      "personId": 3,
-      "id": 79
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd",
-      "threadId": 6,
-      "personId": 3,
-      "id": 80
-    },
-    {
-      "creator": "bjplutka",
-      "content": "asdasd23w12312",
-      "threadId": 6,
-      "personId": 3,
-      "id": 81
-    },
-    {
-      "creator": "bjplutka",
-      "content": "jnjknkjn",
-      "threadId": 7,
-      "personId": 3,
-      "id": 82
-    },
-    {
-      "creator": "bjplutka",
-      "content": "sasddasd",
-      "threadId": 7,
-      "personId": 3,
-      "id": 83
     }
   ]
 }

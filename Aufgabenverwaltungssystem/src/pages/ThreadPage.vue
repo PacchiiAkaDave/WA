@@ -10,7 +10,7 @@
 
       <q-input square outlined v-model="content">
         <template v-slot:append>
-          <q-btn dense flat round icon="send" @click="submitAnswer"/>
+          <q-btn dense flat round color="primary" icon="send" @click="submitAnswer"/>
         </template>
       </q-input>
     </q-footer>

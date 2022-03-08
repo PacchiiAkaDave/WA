@@ -3,17 +3,15 @@
     <div class="column" style="height: 90vh" align="center">
       <div class="col-1">
         <q-avatar size="55px">
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo.svg"/>
+          <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-black.svg" onclick="'/'">
         </q-avatar>
       </div>
+
       <div class="col-4">
         <TeamInfo></TeamInfo>
       </div>
-
       <div class="col-2" >
-
-
-        <q-card flat bordered class="my-card bg-grey-1 ">
+        <q-card flat bordered class="my-card bg-grey-1">
           <q-card-section>
             <div class="row items-center no-wrap">
               <div class="col">
@@ -22,7 +20,6 @@
 
             </div>
             <q-separator/>
-
           </q-card-section>
           <q-scroll-area style="height: 250px; max-width: 200px;" class="no-padding scrollb">
             <div v-for="obj in teamMembers" :key="obj.id">
@@ -41,12 +38,7 @@
           <q-card-actions>
           </q-card-actions>
         </q-card>
-
       </div>
-
-
-
-
     </div>
   </div>
 
@@ -104,5 +96,6 @@ export default {
   max-height: 50px
   min-height: 10px
   width: 100px
+
 </style>
 

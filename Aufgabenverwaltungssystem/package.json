@@ -9,7 +9,11 @@
     "dev": "concurrently npm:modules:* ",
     "modules:quasar": "quasar dev",
     "modules:backend": "json-server --watch db.json --routes routes.json",
-    "modules:globalVariables": "sleep 5 && cp src/boot/app.js .quasar/app.js"
+    "modules:globalVariables": "sleep 5 && cp src/boot/app.js .quasar/app.js",
+    "capacitor": "concurrently npm:mobile:*",
+    "mobile:quasar": "quasar dev -m capacitor -T android",
+    "mobile:backend": "json-server --watch db.json --routes routes.json",
+    "mobile:globalVariables": "sleep 5 && cp src/boot/app.js .quasar/app.js"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",

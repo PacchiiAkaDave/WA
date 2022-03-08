@@ -1,7 +1,7 @@
 <template>
   <div class="row">
 
-   <div class="col" style="padding-top: 20px" align="center">
+   <div class="col avatar" style="padding-top: 20px" align="center">
      <q-avatar size="250px">
        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
      </q-avatar>
@@ -55,3 +55,9 @@ export default {
 
 }
 </script>
+<style lang="sass">
+.q-gutter-md
+  margin-top: 20px
+.avatar
+   margin-top: 30px
+</style>
