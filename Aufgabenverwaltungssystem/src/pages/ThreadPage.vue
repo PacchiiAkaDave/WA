@@ -86,9 +86,7 @@ export default {
       this.thread = await fetch(this.backendUrl + "/threads/" + id).then(res => res.json())
       this.answers = await fetch(this.backendUrl + "/threads/" + id + "/answers").then(res => res.json())
     },
-
   },
-
 }
 
 </script>

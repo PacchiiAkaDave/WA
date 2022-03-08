@@ -1,6 +1,6 @@
 <template>
   <q-card flat bordered class="my-card">
-    <q-card-section class="q-pt-none bg-primary text-white">
+    <q-card-section class="q-pt-none bg-secondary text-white">
       <div class="text-h6">{{thread.topic}}</div>
       <div class="text-subtitle2">by {{ thread.creator }}</div>
 

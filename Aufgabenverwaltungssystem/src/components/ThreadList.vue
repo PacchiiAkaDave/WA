@@ -13,7 +13,7 @@
       :options="[
           {label: 'Global', value: 'one'},
           {label: 'Team', value: 'two'},
-          {label: 'Eigene', value: 'three'}
+          {label: 'Self', value: 'three'}
         ]"
     />
   </div>
@@ -69,8 +69,6 @@ export default {
       model: ref('one'),
 
     }
-
-
   },
 }
 </script>

@@ -2,8 +2,8 @@
   <q-card flat bordered class="my-card">
     <q-card-section>
       <q-item-label>
-        <q-avatar size="35px">
-          <img src="https://cdn.quasar.dev/logo-v2/svg/logo.svg"/>
+        <q-avatar>
+          <img src="https://cdn.quasar.dev/img/boy-avatar.png">
         </q-avatar>
         {{ answer.creator }}
       </q-item-label>

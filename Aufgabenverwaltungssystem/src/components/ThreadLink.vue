@@ -2,7 +2,7 @@
   <div>
     <q-item clickable :to="{path: '/thread/' + this.thread.id}" v-ripple>
       <q-card class="my-card">
-        <q-card-section class="bg-primary text-white">
+        <q-card-section class="bg-secondary text-white">
           <div class="text-h8">{{ thread.topic }}</div>
           <div class="text-subtitle2">by {{ thread.creator }}</div>
         </q-card-section>

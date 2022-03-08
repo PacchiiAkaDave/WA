@@ -1,18 +1,17 @@
 <template>
   <q-layout view="hHh LpR lFr" class="main-frame">
-    <q-header elevated class="bg-primary text-white">
+    <q-header elevated class="bg-secondary text-white">
       <q-toolbar>
         <q-btn dense flat round icon="tag" @click="toggleLeftDrawer"/>
-        <q-item-label v-if="!leftDrawerOpen"> Threads</q-item-label>
-        <q-toolbar-title>
-          <q-item class>
+        <q-item-label v-if="!leftDrawerOpen"></q-item-label>
+        <q-toolbar-title class="text-center">
+          Work
             <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" onclick="'/'">
             </q-avatar>
-            Assignment Check
-          </q-item>
+          Check
         </q-toolbar-title>
-        <q-item-label v-if="!rightDrawerOpen"> Menu</q-item-label>
+        <q-item-label v-if="!rightDrawerOpen"></q-item-label>
         <q-btn dense flat round icon="account_circle" @click="toggleRightDrawer"/>
       </q-toolbar>
     </q-header>
@@ -49,7 +48,7 @@
         <q-item-label header>
           <div class="row">
             <div class="col-10 person">
-              <b>Hallo *Personenname*!</b>
+              <b>Hello {{this.username}}</b>
             </div>
             <div class="col">
               <q-btn dense flat round icon="navigate_next" @click="toggleRightDrawer"/>
@@ -78,41 +77,40 @@ import {defineComponent, ref} from 'vue'
 
 const linksList = [
   {
-    title: 'Profil',
-    caption: 'Profil bearbeiten',
+    title: 'Profile',
+    caption: 'Edit profile information',
     icon: 'manage_accounts',
     link: '/profil'
   },
   {
     title: 'Team',
-    caption: 'Details deines Teams',
+    caption: 'Edit your team.',
     icon: 'groups',
-    link: '/team'
-  },
-  {
-    title: 'Schwarzes Brett',
-    caption: 'schau nach offenen Auftraegen',
-    icon: 'assignment',
-    link: '/auftrag'
+    link: '/error'
   },
   {
     title: 'Einstellungen',
     caption: 'Einstellungen aendern',
     icon: 'settings',
-    link: '/einstellungen'
+    link: '/error'
   },
   {
     title: 'Abmelden',
     caption: 'abmelden',
     icon: 'logout',
-    link: '/logout'
+    link: '/error'
   }
 
 ];
 
 
 export default defineComponent({
-
+  data(){
+    return{
+      user: null,
+      username: " "
+    }
+  },
   name: 'MainLayout',
   components: {
     EssentialLink,
@@ -120,9 +118,10 @@ export default defineComponent({
     ThreadLink,
     ThreadList
   },
-  updated() {
-    console.log("updated")
-  },
+ async created() {
+    this.user = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json()).then(json => json[0])
+    this.username = this.user.firstName + " " + this.user.lastName
+ },
 
 
   methods: {
