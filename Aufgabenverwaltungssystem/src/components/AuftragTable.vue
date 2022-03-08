@@ -15,8 +15,7 @@
     </q-card>
   </q-dialog>
   <q-layout class="q-pa-md" :key="componentKey">
-    <div v-if="model === 'two'">
-    </div>
+
     <q-table :key="componentKey"
       grid
       card-class="bg-primary text-white"
@@ -28,7 +27,6 @@
     >
 
       <template v-slot:top-left>
-
         <q-btn-toggle
           v-model="model"
           onchange="getDataa"
@@ -60,7 +58,7 @@
             <q-card-section>
             </q-card-section>
             <q-separator/>
-            <AuftragLink :obj="props.row" @eventClicked="getDataa"/>
+            <AuftragLink :obj="props.row" @eventClicked="refreshMainContainer"/>
           </q-card>
         </div>
       </template>
@@ -96,7 +94,14 @@ export default defineComponent({
   },
   name: 'AuftragTable',
   methods: {
-    async getDataa() {
+    async getInfo(){
+      this.$emit("eventClicked")
+    },
+    async refreshMainContainer(){
+      this.getData()
+      this.getInfo()
+    },
+    async getData() {
       if (this.model === 'one') {
         const user = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json()).then(json => json[0])
         this.rows = await fetch(this.backendUrl + "/assignments?teamId="+user.teamId+"&assignmentStatus=ACCEPTED&_sort=due&_order=asc").then(res => res.json())
@@ -116,17 +121,17 @@ export default defineComponent({
     this.$watch(
       () => this.model,
       async (toParams, previousParams) => {
-        this.getDataa()
+        this.getData()
       },
 
     )
     this.$watch(
       () => this.componentKey,
       async (toParams, previousParams) => {
-        this.getDataa()
+        this.getData()
       },
     )
-    this.getDataa()
+    this.getData()
 
   },
 

@@ -9,10 +9,11 @@
       :breakpoint="500"
       class="bg-grey-3"
     >
-      <MainSideboard></MainSideboard>
+      <MainSideboard ref="child"></MainSideboard>
     </q-drawer>
     <q-page-container>
-      <AuftragTable/>
+      <AuftragTable @eventClicked="refreshMainContainer"/>
+      />
     </q-page-container>
   </q-layout>
 
@@ -20,11 +21,22 @@
 <script>
 import AuftragTable from "src/components/AuftragTable.vue";
 import MainSideboard from "components/MainSideboard";
+
 export default {
   name: 'PageIndex',
   components: {
     AuftragTable,
-    MainSideboard}
+    MainSideboard,
+    sideboard: null,
+  },
+  methods: {
+    refreshMainContainer() {
+      this.sideboard.refresh()
+    }
+  },
+  mounted() {
+    this.sideboard = this.$refs.child
+  }
 }
 </script>
 

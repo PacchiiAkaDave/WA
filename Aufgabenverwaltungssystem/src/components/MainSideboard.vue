@@ -1,7 +1,7 @@
 <template>
     <div class="column" style="height: 100vh" align="center">
 
-        <TeamInfo></TeamInfo>
+        <TeamInfo ref="infoPanel" @eventRefreshed="refreshDone"></TeamInfo>
 
         <q-card flat bordered class="my-card bg-grey-1">
           <q-card-section>
@@ -29,10 +29,6 @@
           </q-scroll-area>
         </q-card>
       </div>
-
-
-
-
 </template>
 
 <script>
@@ -44,6 +40,7 @@ export default {
     return {
       loggedUser: null,
       teamMembers: null,
+      teamInfo: null
     }
   },
   props: {},
@@ -51,8 +48,15 @@ export default {
     TeamInfo
   },
   name: "MainSideboard",
+  methods:{
+    async refresh(){
+      await this.teamInfo.reloadThem()
+    },
+    refreshDone(){
+      this.$forceUpdate()
+    }
+  },
   async created() {
-    // watch the params of the route to fetch the data again
     this.$watch(
       () => this.$route.params,
       async () => {
@@ -67,12 +71,16 @@ export default {
     this.teamMembers = await fetch(this.backendUrl + "/persons?teamId=" + this.loggedUser.teamId).then(res => res.json())
 
   },
+  mounted() {
+    this.teamInfo = this.$refs.infoPanel
+  },
   setup() {
     const myListRef = ref(null)
 
     return {
       myListRef,
-      listEl: computed(() => myListRef.value ? myListRef.value.$el : null)
+      listEl: computed(() => myListRef.value ? myListRef.value.$el : null),
+
     }
   }
 }
