@@ -9,7 +9,7 @@
     </q-card-section>
 
     <q-card-section>
-      <div class="text-subtitle4">due {{ obj.due }}</div>
+      <q-item-label caption class="text-">due {{ obj.due }}</q-item-label>
     </q-card-section>
 
     <q-separator/>
@@ -23,12 +23,15 @@
     <q-card style="min-width: 350px">
       <q-card-section>
         <div class="text-h6">{{ obj.title }}</div>
+        <q-item-label caption class="text-">due {{ obj.due }}</q-item-label>
+
       </q-card-section>
+
+
       <q-card-section>
         <div class="text">{{ obj.desc }}</div>
       </q-card-section>
       <q-card-actions v-if="checkAdd" :key="obj.id" align="right" class="text-primary">
-
         <q-btn label="add" size="12px" color="secondary" @click="submitAdd" v-close-popup/>
         <q-btn flat label="Close" v-close-popup/>
       </q-card-actions>
@@ -73,23 +76,10 @@ export default defineComponent({
 
   methods: {
     async fetchData(){
-
       const person = await fetch(this.backendUrl + "/persons?username=" + this.prototypeUser).then(res => res.json())
-      if (person[0].teamId !== this.obj.teamId) {
-        this.checkAdd = true
-      } else {
-        this.checkAdd = false
-      }
-      if(person[0].teamId === this.obj.teamId && this.obj.assignmentStatus==="ACCEPTED"){
-        this.checkCurrent = true
-      }else {
-        this.checkCurrent = false
-      }
-      if(person[0].teamId === this.obj.teamId && this.obj.assignmentStatus==="DONE"){
-        this.checkDone = true
-      }else {
-        this.checkDone = false
-      }
+      this.checkAdd = person[0].teamId !== this.obj.teamId;
+      this.checkCurrent = person[0].teamId === this.obj.teamId && this.obj.assignmentStatus === "ACCEPTED";
+      this.checkDone = person[0].teamId === this.obj.teamId && this.obj.assignmentStatus === "DONE";
     },
     async submitAdd() {
       const res = await fetch(this.backendUrl + "/assignments?id=" + this.obj.id).then(res => res.json()).then(json => json[0])
@@ -135,7 +125,6 @@ export default defineComponent({
         body: JSON.stringify(res)
       })
       this.$emit("eventClicked")
-
     }
   },
   setup() {

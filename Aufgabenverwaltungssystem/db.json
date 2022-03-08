@@ -277,7 +277,7 @@
       "type": "GlobalThread",
       "uri": "http://localhost:3000/threads/1",
       "personId": 3,
-      "teamId": 0
+      "teamId": null
     },
     {
       "created": "2022-12-12",
@@ -299,7 +299,7 @@
       "type": "GlobalThread",
       "uri": "http://localhost:3000/threads/4",
       "personId": 1,
-      "teamId": 1
+      "teamId": null
     },
     {
       "created": "2022-12-12",
